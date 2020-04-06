@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :quotes
   resources :leads
   resources :buildings
+  resources :interventions
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
 
@@ -24,8 +25,11 @@ Rails.application.routes.draw do
   get '/dashboard' => "watson#create"
   post '/dashboard' => "watson#create"
 
+
   get 'dropbox/auth' => 'dropbox#auth'
   get 'dropbox/auth_callback' => 'dropbox#auth_callback'
+
+  post '/new_intervention' => 'interventions#new_intervention'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
