@@ -11,7 +11,7 @@
     </div>
 
     <% end %>
-    <strong>Customer<strong></br>
+    <strong>Customer<strong><br>
     <div class="control-group">
       <div class="controls">
 	      <%= collection_select(:intervention, :customer_id, Customer.order(:business_name), :id, :business_name, {prompt: 'Please select'} ) %>
