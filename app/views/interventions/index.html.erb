@@ -90,19 +90,17 @@
 
             </div>
         </section>
-
+<!-- FORM -->
             <div class="heading-title heading-dotted text-center">
                 <h2>Intervention</h2>
             </div>
 
-            <div>
-              <select name="post[author_id]" id="post_author_id">
-                <option value="">Please select</option>
-                <option value="1" selected="selected">D. Heinemeier Hansson</option>
-                <option value="2">D. Thomas</option>
-                <option value="3">M. Clark</option>
-              </select>
-            </div>
+			<strong>Customer<strong><br>
+			<div class="control-group">
+			<div class="controls">
+				<%= collection_select(:intervention, :customer_id, Customer.order(:company_name), :id, :company_name, {prompt: 'Select'} ) %>
+				</div> 
+			</div> 
             
 <!-- CONTACT SECTION -->
 
