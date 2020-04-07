@@ -86,22 +86,26 @@
                     <h2 class="fs-40 fw-300"><i><b>Rocket Elevators</i></b>, delivering the highest quality since 1982.</h2>
                     <a class="btn btn-warning btn-lg btn-colored-primary" href="#contact">CONTACT US &nbsp; <i class="fa fa-angle-right"></i></a>
                 </div>
-
-
             </div>
         </section>
-<!-- FORM -->
+<!-- INTERVENTION FORM -->
             <div class="heading-title heading-dotted text-center">
-                <h2>Intervention</h2>
+                <h2>Intervention Form</h2>
             </div>
 
 			<strong>Customer<strong><br>
 			<div class="control-group">
 			<div class="controls">
-				<%= collection_select(:intervention, :customer_id, Customer.order(:company_name), :id, :company_name, {prompt: 'Select'} ) %>
-				</div> 
-			</div> 
-            
+				<%= collection_select(:intervention, :user_id, Customer.order(:company_name), :id, :company_name,  {prompt: 'Select customer'} ) %>
+				</div>
+			</div>
+			<strong>Buildings<strong><br>
+    		<div class="control-group">
+      		<div class="controls">
+        		<%= collection_select(:intervention, :building_name, Building.order(:user_id), :id, :user_id, { prompt: 'Select Building'} ) %>
+        	</div>
+    	</div>
+
 <!-- CONTACT SECTION -->
 
 <section id="contact">
