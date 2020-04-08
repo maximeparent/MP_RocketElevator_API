@@ -31,5 +31,8 @@ Rails.application.routes.draw do
 
   post '/new_intervention' => 'interventions#new_intervention'
 
+  get 'get_courses_by_location/:location_id', to: 'courses#get_courses_by_location'  
+  get '/course_search' => 'courses#course_search'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
