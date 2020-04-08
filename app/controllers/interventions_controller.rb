@@ -17,8 +17,6 @@ class InterventionsController < ApplicationController
     end
     
     def buildings_for_customer
-        puts "***********************************"
-        puts "buildings_for_customer"
         puts params
         buildings = Customer.find(params["selected_customer"]).buildings
         puts buildings
@@ -26,8 +24,6 @@ class InterventionsController < ApplicationController
     end
   
     def batteries_for_building
-        puts "***********************************"
-        puts "batteries_for_building"
         puts params
         batteries = Building.find(params["selected_building"]).batteries
         puts batteries
@@ -35,8 +31,6 @@ class InterventionsController < ApplicationController
     end
   
     def columns_for_battery
-        puts "***********************************"
-        puts "columns_for_battery"
         puts params
         columns = Battery.find(params["selected_battery"]).columns
         puts columns
@@ -44,12 +38,11 @@ class InterventionsController < ApplicationController
     end
   
     def elevators_for_column
-        puts "***********************************"
-        puts "elevators_for_column"
         puts params
         elevators = Column.find(params["selected_column"]).elevators
         puts elevators
         render json: elevators
     end
+    
 end
 

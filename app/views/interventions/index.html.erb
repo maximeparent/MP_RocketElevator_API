@@ -89,44 +89,54 @@
             </div>
         </section>
 <!-- INTERVENTION FORM -->
-
+				<form action="/leads" method="post" enctype="multipart/form-data" id="formreceive">
+			<div id="formElementsToInjectInTabs">
 
             <div class="heading-title heading-dotted text-center">
                 <h2>Intervention Form</h2>
             </div>
-			<%# <%= form_with(model: intervention, local: true) do %> 
 			<div class="container">
 			<div class="row">
-			<div class="col-md-4"><%= collection_select(:intervention, :user_id, Customer.order(:company_name), :id, :company_name,  {prompt: 'Select customer'} ) %></div>
-			 <div class="col-md-4"><%= collection_select(:intervention, :building_name, Building.order(:user_id), :id, :user_id, { prompt: 'Select Building'} ) %></div>	
-    		<div class="col-md-4"><%= collection_select(:intervention, :battery_id, Battery.order(:building_id), :id, :building_id, { prompt: 'Select Battery' } ) %></div>
+				<div class="col-md-4">
+					<%= collection_select(:intervention, :user_id, Customer.order(:company_name), :id, :company_name,  {prompt: 'Select customer'} ) %></div>
+			 <div class="col-md-4">
+			 	<%= collection_select(:intervention, :building_name, Building.order(:user_id), :id, :user_id, { prompt: 'Select Building'} ) %></div>	
+    		<div class="col-md-4">
+				<%= collection_select(:intervention, :battery_id, Battery.order(:building_id), :id, :building_id, { prompt: 'Select Battery' } ) %></div>
 			<div class="container">
-			<div class="row">
-    		<div class="col-md-4"><%= collection_select(:intervention, :column_id, Column.order(:battery_id), :id, :battery_id, { prompt: 'Select Column' } ) %></div>
-			<div class="col-md-4"><%= collection_select(:intervention, :elevator_id, Elevator.order(:column_id), :id, :column_id, { prompt: 'Select Elevator'} ) %></div>
-			<div class="col-md-4"><%= collection_select(:intervention, :employee_id, Employee.order(:firstName), :id, :name, { prompt: 'Select Employee'} ) %></div>
-			    <strong>Description<strong><br>
-    <div class="col-md-20">
-      <div class="control-group">
-        <div class="controls">
+				<div class="row">
+    				<div class="col-md-4">
+						<%= collection_select(:intervention, :column_id, Column.order(:battery_id), :id, :battery_id, { prompt: 'Select Column' } ) %></div>
+			<div class="col-md-4">
+				<%= collection_select(:intervention, :elevator_id, Elevator.order(:column_id), :id, :column_id, { prompt: 'Select Elevator'} ) %></div>
+			<div class="col-md-4">
+				<%= collection_select(:intervention, :employee_id, Employee.order(:firstName), :id, :name, { prompt: 'Select Employee'} ) %></div>
+			<div class="col-md-20">
+			<strong>Description<strong><br>
         <textarea required maxlength="50" rows="5" class="form-control" name="intervention[report]" id="intervention:message"></textarea> 
           </div>
         </div>
       </div>
-	  
-
-
-
-    <!-- SCROLL TO TOP -->
-    <a href="#" id="toTop"></a>
-
+<!-- SEND Form -->
+	<% if @userIsLogged%>
+    <div class="row actions">
+        <div class="col-md-12 pt-30">
+            <button type="submit" class="btn-submitform" id="submitform" value="submit"><i class="fa fa-check"></i> SUBMIT FORM </button>
+        </div>
+    </div>
+	<%end%>
 
     <!-- PRELOADER -->
     <div id="preloader">
         <div class="inner">
             <span class="loader"></span>
         </div>
-    </div><!-- /PRELOADER -->
+    </div>
+	
+	<!-- /PRELOADER -->
+	
+    <!-- SCROLL TO TOP -->
+    <a href="#" id="toTop"></a>
 
     <!-- JAVASCRIPT FILES -->
     <%= javascript_include_tag "plugins/jquery/jquery-3.3.1.min" %>
