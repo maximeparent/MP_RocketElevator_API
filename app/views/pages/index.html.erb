@@ -55,14 +55,20 @@
 										<li> <%= link_to 'SUBMISSION'.html_safe, submissionform_path %></li> 
 									<!-- CONTACT -->
 										<li> <%= link_to 'CONTACT'.html_safe, anchor: "contact" %> </li>
+									
+
 									<!-- CONNECT -->
 									<% if !current_user %>
 										<li><%= link_to "LOGIN", new_user_session_path %></li>
 										<li><%= link_to "SIGN UP", new_user_registration_path %></li>
 									<% elsif current_user.has_role? :admin %>
+									<!-- INTERVENTIONS -->
+										<li> <%= link_to 'INTERVENTIONS'.html_safe, interventions_path %> </li>
 										<li><%= link_to "ADMIN PANEL", rails_admin_path %> </li>
 										<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
 									<% elsif current_user.has_role? :employee %>
+									<!-- INTERVENTIONS -->
+										<li> <%= link_to 'INTERVENTIONS'.html_safe, interventions_path %> </li>
 										<li><%= link_to "ADMIN PANEL", rails_admin_path %> </li>
 										<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
 									<% else %>

@@ -142,7 +142,7 @@ namespace :dwh do
       )
       customer = Customer.create(
         creation_date: Faker::Date.between(from: 1000.days.ago, to: Date.today),
-        company_name: Faker::Artist.name,
+        company_name: Faker::Artist.unique.name,
         contact_fullname: Faker::Artist.name,
         contact_phone: Faker::PhoneNumber.phone_number,
         company_email: Faker::Internet.email,

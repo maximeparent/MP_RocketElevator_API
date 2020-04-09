@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	<meta charset="utf-8" />
-		<title>Rocket Elevators</title>
-		<meta name="description" content="Projet Genesis" />
-		<meta name="Author" content="David Amyot" />
-	</head>
+<head>
+<meta charset="utf-8" />
+    <title>Rocket Elevators</title>
+    <meta name="description" content="Projet Genesis" />
+    <meta name="Author" content="David Amyot" />
 
-	<body class="smoothscroll enable-animation">
-			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+    <!-- mobile settings -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
 
-				<!-- TOP NAV -->
-				<header id="topNav">
-					<div class="container">
+</head>
 
-						<!-- Mobile Menu Button -->
-						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-							<i class="fa fa-bars"></i>
-						</button>
+<body class="smoothscroll enable-animation pagesubmissionForm">
+    <div id="wrapper">
 
-						<!-- Logo -->
+        <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+            <!-- TOP NAV -->
+            <header id="topNav">
+                <div class="container">
+
+                    <!-- Mobile Menu Button -->
+                    <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Logo -->
                         <%= link_to index_path, class: "logo float-left" do %><%= image_tag("logo.jpeg", alt: "Rocket Elevators Logo")%><% end %>
 
-
-						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
-							<nav class="nav-main">
+                    <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+                        <nav class="nav-main">
 
                             <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
                             <!-- HOME -->
@@ -37,7 +42,7 @@
                                     <ul class="dropdown-menu">
                                         <li class="dropdown-item"><%= link_to 'Overview'.html_safe, index_path(anchor: "portfolio") %></li>
                                         <li class="dropdown-item divider"></li>
-                                        <li class="dropdown-item"><%= link_to 'Residential Projects'.html_safe, anchor: "portfolio_residential" %></li>
+                                        <li class="dropdown-item"><%= link_to 'Residential Projects'.html_safe, residential_path %></li>
                                         <li class="dropdown-item divider"></li>
                                         <li class="dropdown-item"><%= link_to 'Corporate Projects'.html_safe, corporate_path %></li>
                                     </ul>
@@ -47,166 +52,52 @@
                             <!-- CLIENTS -->
                                 <li> <%= link_to 'CLIENTS'.html_safe, index_path(anchor: "clients") %> </li>
                             <!-- SUBMISSION FORM -->
-								<li> <%= link_to 'SUBMISSION'.html_safe, submissionform_path %></li>
+                                <li> <%= link_to 'SUBMISSION'.html_safe, anchor: "submission" %> </li>
                             <!-- CONTACT -->
                                 <li> <%= link_to 'CONTACT'.html_safe, anchor: "contact" %> </li>
-							
-							<!-- CONNECT -->
-								<!-- CONNECT -->
-								<% if !current_user %>
-									<li><%= link_to "LOGIN", new_user_session_path %></li>
-									<li><%= link_to "SIGN UP", new_user_registration_path %></li>
-								<% elsif current_user.has_role? :admin %>
-								<!-- INTERVENTIONS -->
+                            
+                            <!-- CONNECT -->
+                                <% if !current_user %>
+                                    <li><%= link_to "LOGIN", new_user_session_path %></li>
+                                    <li><%= link_to "SIGN UP", new_user_registration_path %></li>
+                                <% elsif current_user.has_role? :admin %>
+                                <!-- INTERVENTIONS -->
 								<li> <%= link_to 'INTERVENTIONS'.html_safe, interventions_path %> </li>
-									<li><%= link_to "ADMIN PANEL", rails_admin_path %> </li>
-									<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
-								<% elsif current_user.has_role? :employee %>
-								<!-- INTERVENTIONS -->
+                                    <li><%= link_to "ADMIN PANEL", rails_admin_path %> </li>
+                                    <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+                                <% elsif current_user.has_role? :employee %>
+                                <!-- INTERVENTIONS -->
 								<li> <%= link_to 'INTERVENTIONS'.html_safe, interventions_path %> </li>
-									<li><%= link_to "ADMIN PANEL", rails_admin_path %> </li>
-									<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
-								<% else %>
-									<li><%= link_to "PROFILE", edit_user_registration_path %></li>
-									<li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
-								<% end %>
+                                    <li><%= link_to "ADMIN PANEL", rails_admin_path %> </li>
+                                    <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+                                <% else %>
+                                    <li><%= link_to "PROFILE", edit_user_registration_path %></li>
+                                    <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+                                <% end %>
+                                
                             </ul>
                         </nav>
-						</div>
+                    </div>
+                </div>
+            </header>
+        </div>
 
-					</div>
-				</header>
-			</div>
+        <section class="parallax parallax-1" style="background-image: url(<%= asset_path "ribbon.jpeg" %>)">
+            <div class="overlay dark-5"></div>
 
-<!-- RIBBON -->
-			<section class="parallax parallax-1" style="background-image: url(<%= asset_path "ribbon.jpeg" %>)">
-				<div class="overlay dark-5"></div>
+            <div class="container">
 
-				<div class="container">
-
-					<div class="text-center">
-						<h2 class="fs-40 fw-300"><i><b>Rocket Elevators</i></b>, delivering the highest quality since 1982.</h2>
-						<a class="btn btn-warning btn-lg btn-colored-primary" href="#contact">CONTACT US &nbsp; <i class="fa fa-angle-right"></i></a>
-						&nbsp; OR &nbsp; 
-						<%= link_to 'REQUEST A SUBMISSION &nbsp; <i class="fa fa-angle-right"></i>'.html_safe, submissionform_path, class: "btn btn-default btn-lg btn-colored-secondary" %>
-					</div>
-
-
-				</div>
-			</section>
-
-
-<!-- PORTFOLIO -->
-
-			<section id="portfolio_residential">
-				<div class="container">
-
-					<div class="heading-title heading-dotted text-center">
-						<h2>All Our Residential Projects</h2>
-					</div>
-				</div>
-
-				<div class="row mix-grid">
-
-				<!-- RESIDENTIAL PROJECTS SECTION -->
-
-					<!-- RESIDENTIAL PROJECT #1 -->
-						<div class="col-md-3 col-sm-3 mix residential-projects">
-							<div class="item-box">
-								<figure>
-									<span class="item-hover">
-										<span class="overlay dark-5"></span>
-										<span class="inner">
-											<a class="ico-rounded lightbox" href="assets/images/res-elevator1.jpeg" data-plugin-options='{"type":"image"}'>
-												<span class="fa fa-plus fs-20"></span>
-											</a>
-										</span>
-									</span>
-									<%= image_tag("res-elevator1.jpeg", class: "img-fluid h-200", width: "600", height: "399", alt: "Picture of residential project #1") %>
-								</figure>
-								<div class="item-box-desc">
-									<h3>Frankeinstein's Laboratory</h3>
-									<ul class="list-inline categories m-0">
-										<li><a data-filter="residential-projects" class="filter" href="#residential-projects">Residential Projects</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-					<!-- RESIDENTIAL PROJECT #2 -->
-						<div class="col-md-3 col-sm-3 mix residential-projects">
-							<div class="item-box">
-								<figure>
-									<span class="item-hover">
-										<span class="overlay dark-5"></span>
-										<span class="inner">
-											<a class="ico-rounded lightbox" href="assets/images/res-elevator2.jpeg" data-plugin-options='{"type":"image"}'>
-												<span class="fa fa-plus fs-20"></span>
-											</a>
-										</span>
-									</span>
-									<%= image_tag("res-elevator2.jpeg", class: "img-fluid h-200", width: "600", height: "399", alt: "Picture of residential project #2") %>
-								</figure>
-								<div class="item-box-desc">
-									<h3>Spiderman's Web-House</h3>
-									<ul class="list-inline categories m-0">
-										<li><a data-filter="residential-projects" class="filter" href="#residential-projects">Residential Projects</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-					<!-- RESIDENTIAL PROJECT #3 -->
-						<div class="col-md-3 col-sm-3 mix residential-projects">
-							<div class="item-box">
-								<figure>
-									<span class="item-hover">
-										<span class="overlay dark-5"></span>
-										<span class="inner">
-											<a class="ico-rounded lightbox" href="assets/images/res-elevator3.jpeg" data-plugin-options='{"type":"image"}'>
-												<span class="fa fa-plus fs-20"></span>
-											</a>
-										</span>
-									</span>
-									<%= image_tag("res-elevator3.jpeg", class: "img-fluid h-200", width: "600", height: "399", alt: "Picture of residential project #3") %>
-								</figure>
-								<div class="item-box-desc">
-									<h3>Superman's Leave-Me-Alone House</h3>
-									<ul class="list-inline categories m-0">
-										<li><a data-filter="residential-projects" class="filter" href="#residential-projects">Residential Projects</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-					<!-- RESIDENTIAL PROJECT #4 -->
-						<div class="col-md-3 col-sm-3 mix residential-projects">
-							<div class="item-box">
-								<figure>
-									<span class="item-hover">
-										<span class="overlay dark-5"></span>
-										<span class="inner">
-											<a class="ico-rounded lightbox" href="assets/images/res-elevator4.jpeg" data-plugin-options='{"type":"image"}'>
-												<span class="fa fa-plus fs-20"></span>
-											</a>
-										</span>
-									</span>
-									<%= image_tag("res-elevator4.jpeg", class: "img-fluid h-200", width: "600", height: "399", alt: "Picture of residential project #4") %>
-								</figure>
-								<div class="item-box-desc">
-									<h3>Batman's Batcave</h3>
-									<ul class="list-inline categories m-0">
-										<li><a data-filter="residential-projects" class="filter" href="#residential-projects">Residential Projects</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-			</section>
+                <div class="text-center">
+                    <h2 class="fs-40 fw-300"><i><b>Rocket Elevators</i></b>, delivering the highest quality since 1982.</h2>
+                    <a class="btn btn-warning btn-lg btn-colored-primary" href="#contact">CONTACT US &nbsp; <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </section>
+        <div class="text-center">
+            <h1 class="fs-40 fw-300"><b>Intervention was successfully created</h2>
+        </div>
 
 <!-- CONTACT SECTION -->
-
-
 
 <section id="contact">
 	<div class="container">

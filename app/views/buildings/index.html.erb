@@ -44,6 +44,9 @@
                     <li> <%= link_to 'SUBMISSION'.html_safe, submissionform_path %></li>
                   <!-- CONTACT -->
                     <li> <%= link_to 'CONTACT'.html_safe, index_path(anchor: "contact") %> </li>
+
+                    <li> <%= link_to 'INTERVENTIONS'.html_safe, index_path(anchor: "interventions") %> </li>
+
                   <!-- CONNECT -->
                   <% if !current_user %>
                     <li><%= link_to "LOGIN", new_user_session_path %></li>
