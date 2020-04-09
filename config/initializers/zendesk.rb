@@ -5,6 +5,7 @@ client = ZendeskAPI::Client.new do |config|
   config.url = ENV["ZENDESK_URL"]
   config.username = ENV["ZENDESK_USERNAME"]
   config.password = ENV["ZENDESK_PASSWORD"]
+  config.access_token = ENV["ZENDESK_ACCESS_TOKEN"]
 
   # Choose one of the following depending on your authentication choice
   # config.token = "5c1dc614ed3e7ee38623143c2f67f81179096176ed72bb07c665a5a82f58e9ed"
