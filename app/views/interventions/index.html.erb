@@ -89,18 +89,19 @@
             </div>
         </section>
 <!-- INTERVENTION FORM -->
-				<form action="/leads" method="post" enctype="multipart/form-data" id="formreceive">
+				 <form method="post" action="/interventions" id="formreceive">
 			<div id="formElementsToInjectInTabs">
+			
 
             <div class="heading-title heading-dotted text-center">
                 <h2>Intervention Form</h2>
             </div>
 			<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<%= collection_select(:intervention, :user_id, Customer.order(:company_name), :id, :company_name,  {prompt: 'Select customer'} ) %></div>
+				<div class="row">
+					<div class="col-md-4">
+					<%= collection_select(:intervention, :customer_id, Customer.order(:company_name), :id, :company_name,  {prompt: 'Select customer'} ) %></div>
 			 <div class="col-md-4">
-			 	<%= collection_select(:intervention, :building_name, Building.order(:user_id), :id, :user_id, { prompt: 'Select Building'} ) %></div>	
+			 	<%= collection_select(:intervention, :building_id, Building.order(:id), :id, :id, { prompt: 'Select Building'} ) %></div>	
     		<div class="col-md-4">
 				<%= collection_select(:intervention, :battery_id, Battery.order(:building_id), :id, :building_id, { prompt: 'Select Battery' } ) %></div>
 			<div class="container">
@@ -114,17 +115,15 @@
 			<div class="col-md-20">
 			<strong>Description<strong><br>
         <textarea required maxlength="50" rows="5" class="form-control" name="intervention[report]" id="intervention:message"></textarea> 
-          </div>
-        </div>
-      </div>
-<!-- SEND Form -->
-	<% if @userIsLogged%>
-    <div class="row actions">
-        <div class="col-md-12 pt-30">
-            <button type="submit" class="btn-submitform" id="submitform" value="submit"><i class="fa fa-check"></i> SUBMIT FORM </button>
+					</div>
+				</div>
+			</div>	
         </div>
     </div>
-	<%end%>
+	<!-- SEND FORM -->
+		<button id="submitform" class="btn-submitform" type="submit">SUBMIT FORM &nbsp; <i class="fa fa-angle-right"></i></button>
+		</form>
+
 
     <!-- PRELOADER -->
     <div id="preloader">
