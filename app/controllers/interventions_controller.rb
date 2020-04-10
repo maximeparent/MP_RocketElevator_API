@@ -1,14 +1,5 @@
 require 'zendesk_api'
 class InterventionsController < ApplicationController
-    def index
-        @user = current_user
-        @interventions = Intervention.all
-        @customer = []
-        @building = []
-        @battery = []
-        @column = []
-        @elevator = []
-      end
       
     before_action :set_intervention, only: [:show, :edit, :update, :destroy]
 
@@ -46,58 +37,48 @@ class InterventionsController < ApplicationController
             config.raise_error_when_rate_limited = false
             require 'logger'
             config.logger = Logger.new(STDOUT)
-        end 
-
-        customer = intervention.customer
-        # customer_name = customer.company_name
-  
-        building = intervention.building
-  
-        employee = intervention.employee
-        # employee_name = (employee.firstName + " " + employee.name)
+        end
         
-  
-        comment = { :value => "There is a problem with the Building # #{intervention.building_id} \n Battery # #{intervention.battery_id} \n Column # #{intervention.column_id} \n Elevator # #{intervention.elevator_id} \n \n This is the description provides by the employee: \n #{intervention.report} "}
-    
+        comment = { :value =>  "There's a problem with the customer # #{intervention.customer_id} \n In The Building # #{intervention.building_id} \n The Battery # #{intervention.battery_id}  \n the Column # #{intervention.column_id} \n The Elevator # #{intervention.elevator_id} \n \n This is the description provides by the employee : \n #{intervention.report} "}
+        
         ZendeskAPI::Ticket.create!(client, :type => 'task', :priority => "urgent",
         :subject => 'New Intervention',
         :comment => comment,
-        # :submitter_id => $client.current_user.token
         )
         end
     end
     
 
-    # def buildings_by_customer
-    #   @building = Customer.where(customer_id: params[:selected_customer]).first.buildings
-    # end
+#     def buildings_by_customer
+#       @building = Customer.where(customer_id: params[:selected_customer]).first.buildings
+#     end
     
-    # def buildings_for_customer
-    #     puts params
-    #     buildings = Customer.find(params["selected_customer"]).buildings
-    #     puts buildings
-    #     render json: buildings
-    # end
+#     def buildings_for_customer
+#         puts params
+#         buildings = Customer.find(params["selected_customer"]).buildings
+#         puts buildings
+#         render json: buildings
+#     end
   
-    # def batteries_for_building
-    #     puts params
-    #     batteries = Building.find(params["selected_building"]).batteries
-    #     puts batteries
-    #     render json: batteries
-    # end
+#     def batteries_for_building
+#         puts params
+#         batteries = Building.find(params["selected_building"]).batteries
+#         puts batteries
+#         render json: batteries
+#     end
   
-    # def columns_for_battery
-    #     puts params
-    #     columns = Battery.find(params["selected_battery"]).columns
-    #     puts columns
-    #     render json: columns
-            # end
+#     def columns_for_battery
+#         puts params
+#         columns = Battery.find(params["selected_battery"]).columns
+#         puts columns
+#         render json: columns
+#             end
   
-    # def elevators_for_column
-    #     puts params
-    #     elevators = Column.find(params["selected_column"]).elevators
-    #     puts elevators
-    #     render json: elevators
+#     def elevators_for_column
+#         puts params
+#         elevators = Column.find(params["selected_column"]).elevators
+#         puts elevators
+#         render json: elevators
 
 # end
 

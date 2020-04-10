@@ -102,8 +102,8 @@
             </div>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4">
-					<%= collection_select(:intervention, :customer_id, Customer.order(:company_name), :id, :company_name,  {prompt: 'Select customer'} ) %></div>
+				    <div class="col-md-4">
+					    <%= collection_select(:intervention, :customer_id, Customer.order(:company_name), :id, :company_name,  {prompt: 'Select customer'} ) %></div>
 			 <div class="col-md-4">
 			 	<%= collection_select(:intervention, :building_id, Building.order(:id), :id, :id, { prompt: 'Select Building'} ) %></div>	
     		<div class="col-md-4">
@@ -117,8 +117,8 @@
 			<div class="col-md-4">
 				<%= collection_select(:intervention, :employee_id, Employee.order(:firstName), :id, :name, { prompt: 'Select Employee'} ) %></div>
 			<div class="col-md-20">
-			<strong>Description<strong><br>
-        <textarea required maxlength="50" rows="5" class="form-control" name="intervention[report]" id="intervention:message"></textarea> 
+			    <strong>Description<strong><br>
+                    <textarea required maxlength="50" rows="5" class="form-control" name="intervention[report]" id="intervention:message"></textarea> 
 					</div>
 				</div>
 			</div>	
