@@ -1,12 +1,10 @@
 # Rocket-Elevator-Foundation
 
-WEEK 7 - Life Is A Web Service
+WEEK 9 - Consolidation
 
 Video showcase : 
 
 Features :
-- Beautiful programmers;
-- Lots of hard work;
 - One relational databse (mysql);
 - One datawarehouse (postgresql);
 - Multiple tables with relations;
