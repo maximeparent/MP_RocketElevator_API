@@ -1,8 +1,6 @@
 # Rocket-Elevator-Foundation
 
-WEEK 9 - Consolidation
-
-Video showcase : 
+WEEK 9 - Consolidation 
 
 Features :
 - One relational databse (mysql);
