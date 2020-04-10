@@ -13,8 +13,9 @@ class InterventionsController < ApplicationController
 
         respond_to do |format|
             if @intervention.save
-              format.html { redirect_to @intervention, notice: 'Intervention was successfully created.' }
+                format.html { render :new_intervention }
             else
+                @intervention.save
                 format.html { render :new_intervention }
 
               end
