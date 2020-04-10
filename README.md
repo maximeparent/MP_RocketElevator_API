@@ -31,6 +31,7 @@ Rake dwh:populate : populates all the tables in the datawarehouse
 Rake dwh:update : truncates the postgresql tables AND populates them
 
 ZENDESK : send a quote/use the contact form;
+          send a form/use the interventions tab;
 
 SENDGRID : Complete the contact form by fill the given fields; The Sendgrid API will automatically send you a confirmation e-mail;
 
