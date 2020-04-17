@@ -1,5 +1,7 @@
 # Rocket-Elevator-Foundation
-WEEK 9 - Consolidation 
+WEEK 10
+
+- The vulnerability security manual : vulnerability_review_.pdf
 
 Link for the API REST : https://github.com/maximeparent/API-REST-MaximeParent
 
