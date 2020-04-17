@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :leads
   resources :buildings
   resources :interventions
+  devise_for :users, :controllers => { :registrations => "users/registrations", :sessions => "users/sessions", :passwords => 		"users/passwords" }
 
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
+  # devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Blazer::Engine, at: "blazer"
