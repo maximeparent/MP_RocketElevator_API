@@ -1,7 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << "rocketelevators.me"
-  config.hosts << "www.rocketelevators.me"
+  config.hosts << "rcktelevator.com"
+  config.hosts << "www.rcktelevator.com"
 
 
   
@@ -89,7 +89,7 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
  
 
-  config.hosts << "rocketelevators.me"
+  config.hosts << "rcktelevator.com"
   config.active_storage.service = :db
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
