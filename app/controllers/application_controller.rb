@@ -25,4 +25,4 @@ class ApplicationController < ActionController::Base
   #  def update_activity_time
   #    session[:expires_at] = 1.minutes.from_now
 #    end
-# end
+end
