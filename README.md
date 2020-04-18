@@ -8,7 +8,7 @@ WEEK 10
 - new register need a strong password now
 - all APIs are updated and secured
 - SSL (flexible) is now active on cloudflare
-- reCAPTCHA is active in sign up and login
+- reCAPTCHA is active in sign up and login (Works in localhost but now on the actual website error(No site key specified.) but the Key is specified in application.yml and recaptcha.rb in config/intializers)
 - Zendesk API Key, username and password are now Hidden
 
 
