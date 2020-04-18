@@ -3,7 +3,7 @@ WEEK 10
 
 - rcktelevator.com
 
-- The vulnerability security manual : vulnerability_review_.pdf
+- The vulnerability security manual : vulnerability_review_MP.pdf
 
 Link for the API REST : https://github.com/maximeparent/API-REST-MaximeParent
 
