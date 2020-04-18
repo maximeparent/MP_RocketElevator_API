@@ -2,6 +2,10 @@
 WEEK 10
 
 - rcktelevator.com
+- password are now stronger
+- new register need a strong password now
+- all APIs are updated and secured
+- 
 
 - The vulnerability security manual : vulnerability_review_MP.pdf
 
