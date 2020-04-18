@@ -6,7 +6,8 @@ WEEK 10
 - new register need a strong password now
 - all APIs are updated and secured
 - SSL (flexible) is now active on cloudflare
-- 
+- reCAPTCHA is active in sign up and login
+- Zendesk API Key, username and password are now Hidden
 
 - The vulnerability security manual : vulnerability_review_MP.pdf
 
