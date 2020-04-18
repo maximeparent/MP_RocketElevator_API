@@ -5,6 +5,7 @@ WEEK 10
 - password are now stronger
 - new register need a strong password now
 - all APIs are updated and secured
+- SSL (flexible) is now active on cloudflare
 - 
 
 - The vulnerability security manual : vulnerability_review_MP.pdf
