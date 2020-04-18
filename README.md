@@ -1,7 +1,7 @@
 # Rocket-Elevator-Foundation
 WEEK 10
 
-- rcktelevaotr.com
+- rcktelevator.com
 
 - The vulnerability security manual : vulnerability_review_.pdf
 
