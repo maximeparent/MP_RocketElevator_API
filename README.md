@@ -4,7 +4,7 @@ WEEK 10
 - rcktelevator.com
 
 - The vulnerability security manual : vulnerability_review_MP.pdf
-- password are now stronger
+- passwords are now stronger
 - new register need a strong password now
 - all APIs are updated and secured
 - SSL (flexible) is now active on cloudflare
