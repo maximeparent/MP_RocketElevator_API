@@ -2,6 +2,8 @@
 WEEK 10
 
 - rcktelevator.com
+
+- The vulnerability security manual : vulnerability_review_MP.pdf
 - password are now stronger
 - new register need a strong password now
 - all APIs are updated and secured
@@ -9,7 +11,7 @@ WEEK 10
 - reCAPTCHA is active in sign up and login
 - Zendesk API Key, username and password are now Hidden
 
-- The vulnerability security manual : vulnerability_review_MP.pdf
+
 
 Link for the API REST : https://github.com/maximeparent/API-REST-MaximeParent
 
