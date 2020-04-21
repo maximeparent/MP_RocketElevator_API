@@ -107,3 +107,5 @@ gem 'bcrypt_pbkdf'
 gem 'ibm_watson'
 gem 'recaptcha', :require => 'recaptcha/rails' 
 
+gem 'rspec', '~> 3.0'
+
