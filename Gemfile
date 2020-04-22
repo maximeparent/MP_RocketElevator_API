@@ -109,3 +109,5 @@ gem 'recaptcha', :require => 'recaptcha/rails'
 
 gem 'rspec', '~> 3.0'
 
+gem 'open-weather'
+
