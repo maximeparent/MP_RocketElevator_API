@@ -110,4 +110,5 @@ gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'rspec', '~> 3.0'
 
 gem 'open-weather'
+gem 'vimeo_me2', :git => "https://github.com/bo-oz/vimeo_me2.git"
 
