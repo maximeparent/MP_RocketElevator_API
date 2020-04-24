@@ -1,4 +1,6 @@
 require 'open_weather'
+require 'http'
+require 'json'
 # module elevator_media
 
     class Streamer
