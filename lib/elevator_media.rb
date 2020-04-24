@@ -15,7 +15,7 @@ require 'json'
             puts html
             return html
         end
-    # ---------Test get content--------------
+    # ---------Test get weather --------------
         
         def self.getweather()
             options = { units: "metric", APPID: '2a85b82a44affaa68c36bf2b7423be21' }
@@ -23,6 +23,8 @@ require 'json'
             puts info
             info
         end
+
+        
     # ---------Test Get an image-------------
         def self.getimage()
             "app/assets/images/award1.jpeg"

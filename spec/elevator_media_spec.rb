@@ -3,9 +3,9 @@ require 'elevator_media'
 describe Streamer do
 
     describe "get content" do
-
-        context "get a useless quote" do
-            it "return a useless quote as a string" do
+# ---------Test get useless facts-------------
+        context "get a useless facts" do
+            it "return a fun quote as a string" do
                     expect(Streamer.getcontent).to be_kind_of String
             end
         end
@@ -31,4 +31,3 @@ describe Streamer do
         end
     end
 end
-
