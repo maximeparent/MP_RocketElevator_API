@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get '/tos' => "pages#tos"
   get '/dashboard' => "watson#create"
   post '/dashboard' => "watson#create"
+  get '/useless' => "pages#useless"
 
 
   get 'dropbox/auth' => 'dropbox#auth'
