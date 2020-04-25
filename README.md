@@ -1,5 +1,9 @@
 # Rocket-Elevator-Foundation
-WEEK 10
+WEEK 11
+
+To test the new features "Elevators media streamer" when you are in the app Rocket-Elevator-Foundation in the console
+do this command: bundle exec rspec --format documentation
+All the test will show up.
 
 - rcktelevator.com
 
